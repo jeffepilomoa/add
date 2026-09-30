@@ -1,0 +1,343 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  width: 750px;
+  font-size: 13px;
+  user-select: none;
+  min-height: 300px;
+  overflow-x: hidden;
+  font-family: arial, sans-serif;
+}
+
+body, html {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar, 
+html::-webkit-scrollbar {
+  width: 0;
+}
+
+label {
+  color: #333;
+  cursor: pointer;
+  margin-left: 2px;
+  margin-top: -2px;
+  font-weight: 600;
+  padding: 7px 10px;
+  border-radius: 17px;
+  display: inline-block;
+  transition: 300ms ease all;
+  background-color: rgb(0,0,0,0.03);
+}
+
+label:hover {
+  background-color: rgb(0,0,0,0.07);
+}
+
+table tr:has(input[type='checkbox']:checked) td label {
+  color: #e34d1b;
+}
+
+table {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-spacing: 0 5px;
+  font-family: arial, sans-serif;
+}
+
+details {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+details.tweaks {
+  overflow-y: auto;
+  max-height: 500px;
+  overflow-x: hidden;
+}
+
+summary {
+  border: 0;
+  padding: 0;
+  height: 42px;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 42px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+textarea {
+  border: 0;
+  color: #333;
+  width: 100%;
+  height: 128px;
+  padding: 10px;
+  outline: none;
+  display: block;
+  font-size: 13px;
+  font-family: monospace;
+  box-sizing: border-box;
+}
+
+textarea[disabled],
+input[type='text'][disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: brightness(0.75);
+}
+
+input[type='text'], input[type='number'] {
+  border: 0;
+  padding: 0;
+  color: #333;
+  outline: none;
+  font-size: 13px;
+  text-indent: 10px;
+  font-family: monospace;
+}
+
+input[type='text'] {
+  width: 100%;
+  height: 38px;
+  font-weight: 600;
+}
+
+input[type='number'] {
+  width: 100%;
+  height: 38px;
+  font-weight: 600;
+}
+
+input[type='checkbox'] {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  outline: none;
+  vertical-align: middle;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  width: 42px;
+  margin: auto;
+  height: 42px;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  vertical-align: middle;
+  transition: 300ms ease all;
+}
+
+button:hover {
+  background-color: rgba(0,0,0,0.03);
+}
+
+button svg {
+  fill: #555;
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 45px;
+  position: sticky;
+  background-color: #fff;
+}
+
+.header table {
+  border-spacing: 0;
+}
+
+.title, .button {
+  border-bottom: solid 1px rgba(0,0,0,0.1);
+}
+
+.loader {
+  transition: none;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  background-color: #e34d1b !important;
+}
+
+.loader svg {
+  fill: #fff;
+}
+
+.button div {
+  gap: 1px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: end;
+}
+
+.button div button {
+  margin: unset;
+}
+
+.name {
+  padding: 0 0 0 10px;
+  background-color: rgba(0,0,0,0.01);
+}
+
+.title {
+  padding: 0;
+  width: 100%;
+}
+
+.title div {
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title .logo {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  transition: 300ms ease all;
+  background: url('../icons/42.png') no-repeat center center;
+  background-size: 21px;
+}
+
+.title .logo:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.title .logo[state='ON'] {
+  opacity: 1.00;
+}
+
+.title .logo[state='OFF'] {
+  opacity: 0.50;
+  filter: contrast(0);
+}
+
+.title .text {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.action {
+  padding: 0;
+  width: 48px;
+  height: 38px;
+  text-align: center;
+  background-color: #fcfcfc;
+}
+
+.footer {
+  border-top: solid 1px rgba(0,0,0,0.1);
+}
+
+.footer[open] {
+  padding-bottom: 5px;
+  background-color: #fcfcfc;
+}
+
+.footer table {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-spacing: 5px;
+}
+
+.footer table tr[for='whitelist'] td:nth-child(2) {
+  width: 38px;
+}
+
+.footer table tr td {
+  border: 0;
+  padding: 0;
+  height: 28px;
+  outline: none;
+  border: solid 1px rgba(0,0,0,0.25);
+}
+
+.footer table tr td:first-child {
+  border: 0;
+  width: 160px;
+  padding: 0 5px;
+}
+
+.footer table tr td button {
+  height: 130px;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+
+html[theme='dark'], 
+html[theme='dark'] body {
+  color: #ebebeb;
+  color-scheme: dark;
+  background-color: #1e1e1e;
+}
+
+html[theme='dark'] label {
+  color: #ebebeb;
+  background-color: rgb(255 255 255 / 10%);
+}
+
+html[theme='dark'] textarea,
+html[theme='dark'] .footer table,
+html[theme='dark'] input[type='text'], 
+html[theme='dark'] input[type='number'] {
+  color: #ebebeb;
+}
+
+html[theme='dark'] button svg {
+  fill: #ebebeb;
+}
+
+html[theme='dark'] button,
+html[theme='dark'] .header,
+html[theme='dark'] .action {
+  background-color: #1e1e1e;
+}
+
+html[theme='dark'] button:hover,
+html[theme='dark'] .title .logo:hover {
+  background-color: rgb(255 255 255 / 10%);
+}
+
+html[theme='dark'] label:hover {
+  background-color: rgb(255 255 255 / 15%);
+}
+
+html[theme='dark'] .name,
+html[theme='dark'] .action,
+html[theme='dark'] .footer[open] {
+  background-color: rgb(255 255 255 / 5%);
+}
+
+html[theme='dark'] .title, 
+html[theme='dark'] .button,
+html[theme='dark'] .footer,
+html[theme='dark'] .footer table tr td {
+  border-color: rgb(255 255 255 / 10%);
+}
